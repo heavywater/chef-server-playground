@@ -35,7 +35,7 @@ Vagrant::Config.run do |config|
       chef.provisioning_path = guest_cache_path
       chef.json = {
         "chef-server" => {
-          "version" => :latest,
+          "version" => "latest",
           "prereleases" => true,
           "nightlies" => true
         }
