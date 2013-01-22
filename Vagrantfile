@@ -18,8 +18,12 @@ Vagrant::Config.run do |config|
   config.vm.customize ["modifyvm", :id, "--memory", 1024]
 
   config.vm.host_name = "chef-server-berkshelf"
-  config.vm.box = "opscode-centos-6.3"
-  config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-centos-6.3.box"
+
+  config.vm.box = "opscode-ubuntu-12.04"
+  config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-ubuntu-12.04.box"
+
+  # config.vm.box = "opscode-centos-6.3"
+  # config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-centos-6.3.box"
 
   config.ssh.max_tries = 40
   config.ssh.timeout   = 120
