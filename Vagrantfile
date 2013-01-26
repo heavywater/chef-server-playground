@@ -1,5 +1,8 @@
 require 'berkshelf/vagrant'
 
+boxname = ENV['PLAYGROUND_BOXNAME'] || "opscode_centos-6.3"
+chef_version = ENV['PLAYGROUND_CHEF'] || "10.18.2"
+
 current_dir = File.dirname(__FILE__)
 
 host_cache_path = File.join(current_dir,
@@ -18,8 +21,8 @@ Vagrant::Config.run do |config|
   config.vm.customize ["modifyvm", :id, "--memory", 1024]
 
   config.vm.host_name = "chef-server-berkshelf"
-  config.vm.box = "opscode-centos-6.3"
-  config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-centos-6.3.box"
+  config.vm.box = "#{boxname}"
+  config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/#{boxname}_chef-#{chef_version}.box"
 
   config.ssh.max_tries = 40
   config.ssh.timeout   = 120
