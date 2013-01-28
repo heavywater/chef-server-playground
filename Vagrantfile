@@ -1,6 +1,6 @@
 require 'berkshelf/vagrant'
 
-boxname = ENV['PLAYGROUND_BOXNAME'] || "opscode_centos-6.3"
+boxname = ENV['PLAYGROUND_BOXNAME'] || "opscode-ubuntu-12.04"
 chef_version = ENV['PLAYGROUND_CHEF'] || "10.18.2"
 
 current_dir = File.dirname(__FILE__)
